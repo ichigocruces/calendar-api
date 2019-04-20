@@ -22,6 +22,11 @@ import java.util.List;
 public class Tratamiento implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@Id
+	@GeneratedValue
+	@Column(name="COD_TRATAMIENTO", nullable=false)
+	private int codTratamiento;
+	
 	@Temporal(TemporalType.DATE)
 	@Column(name="FH_BAJA")
 	private Date fhBaja;
@@ -30,7 +35,7 @@ public class Tratamiento implements Serializable {
 	private String nombre;
 
 	//bi-directional many-to-one association to ImporteTratamiento
-	@OneToMany(mappedBy="tratamiento")
+	@OneToMany(mappedBy="id.tratamiento")
 	private List<ImporteTratamiento> importeTratamientos;
 
 }

@@ -20,6 +20,10 @@ import java.util.List;
 @NamedQuery(name="User.findAll", query="SELECT u FROM User u")
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@Column(name="USERNAME", nullable=false, length=6)
+	private String username;
 
 	@Column(name="ENABLED", nullable=false)
 	private byte enabled;

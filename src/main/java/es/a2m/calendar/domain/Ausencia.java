@@ -19,6 +19,8 @@ import lombok.NoArgsConstructor;
 public class Ausencia implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@Id
+	@GeneratedValue
 	@Column(name="COD_AUSENCIA", nullable=false)
 	private byte codAusencia;
 

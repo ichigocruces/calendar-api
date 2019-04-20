@@ -21,6 +21,11 @@ import java.util.Date;
 public class Documento implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@Id
+	@GeneratedValue
+	@Column(name="COD_DOCUMENTO", nullable=false)
+	private int codDocumento;
+	
 	@Lob
 	@Column(name="DOCUMENTO")
 	private byte[] documento;
@@ -40,5 +45,9 @@ public class Documento implements Serializable {
 
 	@Column(name="TIPO", nullable=false, length=6)
 	private String tipo;
+	
+	@ManyToOne
+	@JoinColumn(name="COD_CLIENTE", referencedColumnName="COD_CLIENTE", nullable=false)
+	private Cliente cliente;
 
 }

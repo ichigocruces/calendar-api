@@ -21,6 +21,8 @@ import java.sql.Time;
 public class Clinica implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@Id
+	@GeneratedValue
 	@Column(name="COD_CLINICA", nullable=false)
 	private byte codClinica;
 

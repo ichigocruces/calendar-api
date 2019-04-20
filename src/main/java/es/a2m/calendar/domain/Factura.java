@@ -22,6 +22,10 @@ import java.util.List;
 @NamedQuery(name="Factura.findAll", query="SELECT f FROM Factura f")
 public class Factura implements Serializable {
 	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@Column(name="COD_FACTURA", nullable=false)
+	private String codFactura;
 
 	@Column(name="COD_CLIENTE", nullable=false)
 	private int codCliente;
@@ -34,7 +38,7 @@ public class Factura implements Serializable {
 	private BigDecimal importeTotal;
 
 	//bi-directional many-to-one association to ConceptoFactura
-	@OneToMany(mappedBy="factura")
+	@OneToMany(mappedBy="id.factura")
 	private List<ConceptoFactura> conceptoFacturas;
 
 	public List<ConceptoFactura> getConceptoFacturas() {
@@ -47,14 +51,12 @@ public class Factura implements Serializable {
 
 	public ConceptoFactura addConceptoFactura(ConceptoFactura conceptoFactura) {
 		getConceptoFacturas().add(conceptoFactura);
-		conceptoFactura.setFactura(this);
 		
 		return conceptoFactura;
 	}
 
 	public ConceptoFactura removeConceptoFactura(ConceptoFactura conceptoFactura) {
 		getConceptoFacturas().remove(conceptoFactura);
-		conceptoFactura.setFactura(null);
 
 		return conceptoFactura;
 	}

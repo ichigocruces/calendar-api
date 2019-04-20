@@ -1,0 +1,26 @@
+# ===================================================================
+# Spring Boot configuration for the "prod" profile.
+# ===================================================================
+
+#modificar por los datos de producción
+spring:
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost/a2m
+        username: a2m
+        password: a2m
+
+server:
+    port: 8080
+
+logging:
+    file: /temp/logs/calendar
+    pattern:
+        console: "%d %-5level %logger : %msg%n"
+        file: "%d %-5level [%thread] %logger{5} : %msg%n"
+    level:
+        org.springframework.aop.framework.CglibAopProxy: ERROR
+        org.springframework.boot: WARN
+        org.springframework.web: WARN
+        es.eurohelp.parciu: WARN
+        ROOT: WARN

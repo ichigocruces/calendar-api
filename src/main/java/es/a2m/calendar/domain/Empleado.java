@@ -21,14 +21,16 @@ import java.util.Date;
 public class Empleado implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@Id
+	@GeneratedValue
+	@Column(name="COD_EMPLEADO", nullable=false)
+	private int codEmpleado;
+	
 	@Column(name="APELLIDO1", nullable=false, length=50)
 	private String apellido1;
 
 	@Column(name="APELLIDO2", nullable=false, length=50)
 	private String apellido2;
-
-	@Column(name="COD_EMPLEADO", nullable=false)
-	private int codEmpleado;
 
 	@Column(name="DIRECCION", length=200)
 	private String direccion;

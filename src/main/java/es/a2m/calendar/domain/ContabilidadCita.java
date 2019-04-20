@@ -15,7 +15,7 @@ import java.math.BigInteger;
  */
 @Data
 @NoArgsConstructor
-@Entity
+@Embeddable
 @Table(name="CONTABILIDAD_CITAS")
 @NamedQuery(name="ContabilidadCita.findAll", query="SELECT c FROM ContabilidadCita c")
 public class ContabilidadCita implements Serializable {

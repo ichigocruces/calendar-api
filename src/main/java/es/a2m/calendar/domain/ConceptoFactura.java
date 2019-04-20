@@ -21,11 +21,10 @@ import java.math.BigDecimal;
 public class ConceptoFactura implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@EmbeddedId ConceptoFacturaId id;
+	
 	@Column(name="CANTIDAD")
 	private int cantidad;
-
-	@Column(name="COD_CONCEPTO", nullable=false)
-	private int codConcepto;
 
 	@Column(name="IMPORTE_UNI", precision=10, scale=2)
 	private BigDecimal importeUni;
@@ -33,9 +32,24 @@ public class ConceptoFactura implements Serializable {
 	@Column(name="NOMBRE", length=200)
 	private String nombre;
 
-	//bi-directional many-to-one association to Factura
-	@ManyToOne
-	@JoinColumn(name="COD_FACTURA", referencedColumnName="COD_FACTURA", nullable=false)
-	private Factura factura;
+	@Data
+	@NoArgsConstructor
+	@Embeddable
+	class ConceptoFacturaId  implements Serializable {
+		
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
+
+		@Column(name="COD_CONCEPTO", nullable=false)
+		private int codConcepto;
+		
+		//bi-directional many-to-one association to Factura
+		@ManyToOne
+		@JoinColumn(name="COD_FACTURA", referencedColumnName="COD_FACTURA", nullable=false)
+		private Factura factura;
+		
+	}
 
 }

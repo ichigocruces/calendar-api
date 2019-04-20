@@ -19,6 +19,8 @@ import lombok.NoArgsConstructor;
 public class Estado implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@Id
+	@GeneratedValue
 	@Column(name="COD_ESTADO", nullable=false)
 	private byte codEstado;
 

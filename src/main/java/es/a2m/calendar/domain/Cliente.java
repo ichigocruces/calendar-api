@@ -22,6 +22,11 @@ import java.util.List;
 public class Cliente implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@Id
+	@GeneratedValue
+	@Column(name="COD_CLIENTE", nullable=false)
+	private int codCliente;
+	
 	@Column(name="AFICIONES", length=2000)
 	private String aficiones;
 

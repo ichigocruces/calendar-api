@@ -19,6 +19,7 @@ import lombok.NoArgsConstructor;
 public class Role implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@Id
 	@Column(name="ROLE", nullable=false, length=6)
 	private String role;
 

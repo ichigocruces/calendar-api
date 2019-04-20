@@ -21,14 +21,16 @@ import java.util.Date;
 public class Color implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@Id
+	@GeneratedValue
+	@Column(name="COD_COLOR", nullable=false)
+	private byte codColor;
+	
 	@Column(name="BODY", length=6)
 	private String body;
 
 	@Column(name="BORDER", length=6)
 	private String border;
-
-	@Column(name="COD_COLOR", nullable=false)
-	private byte codColor;
 
 	@Column(name="COD_EMPLEADO")
 	private int codEmpleado;

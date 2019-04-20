@@ -21,6 +21,8 @@ import java.util.Date;
 public class Cita implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@Id
+	@GeneratedValue
 	@Column(name="COD_CITA", nullable=false)
 	private int codCita;
 
@@ -73,7 +75,7 @@ public class Cita implements Serializable {
 
 	//uni-directional many-to-one association to Factura
 	@ManyToOne
-	@JoinColumn(name="COD_FACTURA", referencedColumnName="COD_FACTURA")
+	@JoinColumn(name="COD_FACTURA", referencedColumnName="COD_FACTURA", updatable=false, insertable=false)
 	private Factura factura;
 
 }
