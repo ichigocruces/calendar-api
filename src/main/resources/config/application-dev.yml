@@ -38,6 +38,7 @@ logging:
         file: "%d %-5level [%thread] %logger : %msg%n"
     level:
         org.springframework.aop.framework.CglibAopProxy: ERROR
+        org.springframework.test: INFO
         org.springframework.boot: INFO
         org.springframework.web: INFO
         es.a2m.calendar: DEBUG
