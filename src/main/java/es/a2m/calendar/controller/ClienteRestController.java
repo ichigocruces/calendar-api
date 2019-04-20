@@ -18,8 +18,8 @@ public class ClienteRestController {
 	@Autowired
 	private ClienteService clienteService;
 	
-	@PostMapping("/data")
-	public @ResponseBody List<Cliente> getData() {
+	@PostMapping("/getActiveClients")
+	public @ResponseBody List<Cliente> getActiveClients() {
 		return this.clienteService.findAllActiveClients();
 		
 	}

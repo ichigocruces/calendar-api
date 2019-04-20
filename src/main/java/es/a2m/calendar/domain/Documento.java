@@ -41,13 +41,12 @@ public class Documento implements Serializable {
 	private String nombreFichero;
 
 	@Column(name="TAMANO")
-	private int tamano;
+	private Integer tamano;
 
 	@Column(name="TIPO", nullable=false, length=6)
 	private String tipo;
 	
-	@ManyToOne
-	@JoinColumn(name="COD_CLIENTE", referencedColumnName="COD_CLIENTE", nullable=false)
-	private Cliente cliente;
+	@Column(name="COD_CLIENTE", nullable=false)
+	private Integer codCliente;
 
 }

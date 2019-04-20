@@ -25,7 +25,7 @@ public class Cliente implements Serializable {
 	@Id
 	@GeneratedValue
 	@Column(name="COD_CLIENTE", nullable=false)
-	private int codCliente;
+	private Integer codCliente;
 	
 	@Column(name="AFICIONES", length=2000)
 	private String aficiones;
@@ -77,13 +77,13 @@ public class Cliente implements Serializable {
 	private String profesion;
 
 	@Column(name="TELEFONO1", nullable=false)
-	private int telefono1;
+	private Integer telefono1;
 
 	@Column(name="TELEFONO2")
-	private int telefono2;
+	private Integer telefono2;
 
 	//bi-directional many-to-one association to Documento
-	@OneToMany(mappedBy="cliente")
+	@OneToMany(mappedBy="codCliente")
 	private List<Documento> documentos;
 
 }
