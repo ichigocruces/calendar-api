@@ -5,11 +5,9 @@
 spring:
     datasource:
         driver-class-name: com.mysql.cj.jdbc.Driver
-        #url: jdbc:mysql://127.0.0.1:3306/a2m?verifyServerCertificate=false&useSSL=true
-        #url: jdbc:mysql://127.0.0.1:3306/a2m
-        url: jdbc:mysql://localhost:3306/a2m?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+        url: jdbc:mysql://localhost:3306/a2m_v2?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
         username: a2m
-        password: Kaleko_00
+        password: a2m
     jpa:
         hibernate:
           naming:

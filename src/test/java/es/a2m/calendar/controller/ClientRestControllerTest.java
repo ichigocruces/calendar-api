@@ -18,9 +18,9 @@ public class ClientRestControllerTest extends AbstractTest {
 
 	@Test
 	public void getActiveClients() throws Exception {
-		String uri = "/clients/getActiveClients";
+		String uri = "/api/clients";
 		
-		MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.post(uri))
+		MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(uri))
 				.andReturn();
 		
 		int status = mvcResult.getResponse().getStatus();
