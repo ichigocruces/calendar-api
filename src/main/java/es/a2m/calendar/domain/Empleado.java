@@ -62,9 +62,7 @@ public class Empleado implements Serializable {
 	@JoinColumn(name="COD_COLOR", referencedColumnName="COD_COLOR", nullable=false)
 	private Color color;
 
-	//uni-directional many-to-one association to Clinica
-	@ManyToOne
-	@JoinColumn(name="COD_CLINICA", referencedColumnName="COD_CLINICA", nullable=false)
-	private Clinica clinica;
+	@Column(name="COD_CLINICA", nullable=false)
+	private int codClinica;
 
 }

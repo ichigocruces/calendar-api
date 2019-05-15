@@ -25,7 +25,7 @@ public class ContabilidadCita implements Serializable {
 	private int anio;
 
 	@Column(name="COD_TRATAMIENTO")
-	private byte codTratamiento;
+	private int codTratamiento;
 
 	@Column(name="DIA")
 	private int dia;

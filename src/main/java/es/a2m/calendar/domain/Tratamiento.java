@@ -35,7 +35,7 @@ public class Tratamiento implements Serializable {
 	private String nombre;
 
 	//bi-directional many-to-one association to ImporteTratamiento
-	@OneToMany(mappedBy="id.tratamiento")
+	@OneToMany(mappedBy="id.codTratamiento", fetch=FetchType.LAZY)
 	private List<ImporteTratamiento> importeTratamientos;
 
 }

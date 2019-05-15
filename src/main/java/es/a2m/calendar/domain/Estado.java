@@ -22,7 +22,7 @@ public class Estado implements Serializable {
 	@Id
 	@GeneratedValue
 	@Column(name="COD_ESTADO", nullable=false)
-	private byte codEstado;
+	private int codEstado;
 
 	@Column(name="DESCRIPCION", nullable=false, length=50)
 	private String descripcion;

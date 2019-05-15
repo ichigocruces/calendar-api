@@ -45,10 +45,8 @@ public class ConceptoFactura implements Serializable {
 		@Column(name="COD_CONCEPTO", nullable=false)
 		private int codConcepto;
 		
-		//bi-directional many-to-one association to Factura
-		@ManyToOne
-		@JoinColumn(name="COD_FACTURA", referencedColumnName="COD_FACTURA", nullable=false)
-		private Factura factura;
+		@Column(name="COD_FACTURA", nullable=false)
+		private String codFactura;
 		
 	}
 

@@ -83,7 +83,7 @@ public class Cliente implements Serializable {
 	private Integer telefono2;
 
 	//bi-directional many-to-one association to Documento
-	@OneToMany(mappedBy="codCliente")
+	@OneToMany(mappedBy="codCliente", fetch=FetchType.LAZY)
 	private List<Documento> documentos;
 
 }

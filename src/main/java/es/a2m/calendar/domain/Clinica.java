@@ -1,12 +1,17 @@
 package es.a2m.calendar.domain;
 
 import java.io.Serializable;
-import javax.persistence.*;
+import java.sql.Time;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.sql.Time;
 
 
 /**
@@ -24,16 +29,16 @@ public class Clinica implements Serializable {
 	@Id
 	@GeneratedValue
 	@Column(name="COD_CLINICA", nullable=false)
-	private byte codClinica;
+	private int codClinica;
 
 	@Column(name="DIRECCION", nullable=false, length=20)
 	private String direccion;
 
 	@Column(name="DIVISION", nullable=false)
-	private byte division;
+	private int division;
 
 	@Column(name="DURACION", nullable=false)
-	private byte duracion;
+	private int duracion;
 
 	@Column(name="EMAIL", length=200)
 	private String email;
@@ -53,9 +58,7 @@ public class Clinica implements Serializable {
 	@Column(name="TELF2")
 	private int telf2;
 
-	//uni-directional many-to-one association to Empleado
-	@ManyToOne
-	@JoinColumn(name="COD_EMPLEADO", referencedColumnName="APELLIDO1", nullable=false)
-	private Empleado empleado;
+	@Column(name="COD_EMPLEADO", nullable=false)
+	private int codEmpleado;
 
 }

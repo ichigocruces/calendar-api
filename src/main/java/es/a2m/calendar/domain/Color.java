@@ -24,7 +24,7 @@ public class Color implements Serializable {
 	@Id
 	@GeneratedValue
 	@Column(name="COD_COLOR", nullable=false)
-	private byte codColor;
+	private int codColor;
 	
 	@Column(name="BODY", length=6)
 	private String body;

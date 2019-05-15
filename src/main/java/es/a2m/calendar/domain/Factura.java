@@ -38,7 +38,7 @@ public class Factura implements Serializable {
 	private BigDecimal importeTotal;
 
 	//bi-directional many-to-one association to ConceptoFactura
-	@OneToMany(mappedBy="id.factura")
+	@OneToMany(mappedBy="id.codFactura")
 	private List<ConceptoFactura> conceptoFacturas;
 
 	public List<ConceptoFactura> getConceptoFacturas() {

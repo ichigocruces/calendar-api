@@ -28,11 +28,11 @@ public class Cita implements Serializable {
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="FECHA_FIN")
-	private Date fechaFin;
+	private Date fhFin;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="FECHA_INI")
-	private Date fechaIni;
+	private Date fhIni;
 
 	@Column(name="MOTIVO", length=2000)
 	private String motivo;
@@ -66,7 +66,7 @@ public class Cita implements Serializable {
 	private Estado estado;
 
 	//uni-directional many-to-one association to ConceptoFactura
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumns({
 		@JoinColumn(name="COD_CONCEPTO", referencedColumnName="COD_CONCEPTO"),
 		@JoinColumn(name="COD_FACTURA", referencedColumnName="COD_FACTURA")
@@ -74,7 +74,7 @@ public class Cita implements Serializable {
 	private ConceptoFactura conceptoFactura;
 
 	//uni-directional many-to-one association to Factura
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="COD_FACTURA", referencedColumnName="COD_FACTURA", updatable=false, insertable=false)
 	private Factura factura;
 

@@ -39,21 +39,18 @@ public class ImporteTratamiento implements Serializable {
 	@Column(name="IMPORTE", precision=10, scale=2)
 	private BigDecimal importe;
 
-	
 	@Data
 	@NoArgsConstructor
 	@Embeddable
-	class ImporteTratamientoId implements Serializable {
+	static class ImporteTratamientoId implements Serializable {
 		
 		/**
 		 * 
 		 */
 		private static final long serialVersionUID = 1L;
 
-		//bi-directional many-to-one association to Tratamiento
-		@ManyToOne
-		@JoinColumn(name="COD_TRATAMIENTO", referencedColumnName="COD_TRATAMIENTO", nullable=false)
-		private Tratamiento tratamiento;
+		@Column(name="COD_TRATAMIENTO", nullable=false)
+		private int codTratamiento;
 		
 		@Column(name="CORRELATIVO", nullable=false)
 		private int correlativo;

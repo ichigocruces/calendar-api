@@ -22,7 +22,7 @@ public class Ausencia implements Serializable {
 	@Id
 	@GeneratedValue
 	@Column(name="COD_AUSENCIA", nullable=false)
-	private byte codAusencia;
+	private int codAusencia;
 
 	@Column(name="DESCRIPCION", nullable=false, length=50)
 	private String descripcion;
