@@ -22,6 +22,12 @@ public class CitaServiceImpl implements CitaService {
 	public List<Cita> getAppointments(Date fhIni, Date fhFin, Integer codEmpleado) {
 		return this.citaRepository.getAppointments(Constants.COD_ESTADO_CONFIRMADO, fhIni, fhFin, codEmpleado);
 	}
+
+
+	@Override
+	public void delete(Integer codCita) {
+		this.citaRepository.deleteById(codCita);
+	}
 	
 
 }
